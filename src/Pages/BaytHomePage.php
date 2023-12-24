@@ -16,7 +16,7 @@ class BaytHomePage
     
     public function open()
     {
-        $this->driver->get('https://www.bayt.com');
+        $this->driver->get('https://www.bayt.com/en/pakistan/');
         return $this;
     }
     

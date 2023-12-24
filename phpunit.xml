@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    backupGlobals="false"
+    colors="true"
+    bootstrap="vendor/autoload.php"
+    verbose="true"
+    stopOnError="false"
+    stopOnFailure="false"
+    stopOnIncomplete="false"
+    stopOnSkipped="false">
+
+    <!-- Configuration for Selenium WebDriver -->
+    <php>
+        <const name="SELENIUM_HOST" value="http://localhost:4444/wd/hub"/>
+    </php>
+
+    <!-- Test suite configuration -->
+    <testsuites>
+        <testsuite name="Bayt.com Test Suite">
+            <directory>tests/FunctionalTests</directory>
+        </testsuite>
+    </testsuites>
+
+    <!-- Logging configuration -->
+    <logging>
+        <log type="coverage-html" target="build/coverage" charset="UTF-8" yui="true" highlight="true"
+             lowUpperBound="50" highLowerBound="80"/>
+        <log type="testdox-html" target="build/testdox.html"/>
+    </logging>
+
+    <!-- Selenium browser capabilities -->
+    <php>
+        <var name="chromeOptions" value="{&quot;args&quot;:[&quot;--disable-gpu&quot;,&quot;--headless&quot;,&quot;--no-sandbox&quot;]}" />
+    </php>
+</phpunit>
