@@ -1,3 +1,28 @@
 {
-	"name" : "baytassessment/baytassessment"
+    "name": "BaytAssessment",
+    "description": "Automated Selenium tests for Bayt.com",
+    "type": "project",
+    "require": {
+        "php": "8.2",
+        "phpunit/phpunit": "^9.0",
+        "facebook/webdriver": "^1.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pages\\": "src/Pages/",
+            "Pages\\Mobile\\": "src/Pages/Mobile/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin/"
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+   
 }
